@@ -117,7 +117,7 @@ class RegExpMatcher implements MatcherInterface
         $to = $this->getMarkRegExp($toMark);
         $rangeContent = "";
 
-        $text = preg_replace_callback("/{$from}(.*){$to}/", function ($matches) use (&$rangeContent, $placeMark) {
+        $text = preg_replace_callback("/{$from}(.*?){$to}/", function ($matches) use (&$rangeContent, $placeMark) {
             if (isset($matches[1])) {
                 $rangeContent = $matches[1];
             }
